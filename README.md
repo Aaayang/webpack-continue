@@ -209,8 +209,6 @@ less
 ```
 "babel": "babel src/app.js"
 ```
-<br/>
-<br/>
 例如专门处理箭头函数的插件
 ```
 babel-plugin-transform-es2015-arrow-functions
@@ -219,16 +217,12 @@ babel-plugin-transform-es2015-arrow-functions
 ```
 "babel": "babel src/app.js --plugins transform-es2015-arrow-functions"
 ```
-<br/>
-<br/>
 ```
 babel-plugin-transform-es2015-classes
 ```
 ```
 "babel": "babel src/app.js --plugins=transform-es2015-arrow-functions,transform-es2015-classes"
 ```
-<br/>
-<br/>
 也可以配置.babelrc
 ```
 {
@@ -242,8 +236,6 @@ babel-plugin-transform-es2015-classes
 ```
 "babel": "babel src/app.js"
 ```
-<br/>
-<br/>
 预设：相关的插件打包在一起
 ```
 babel-preset-es2015
