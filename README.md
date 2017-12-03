@@ -83,4 +83,21 @@ css-loader
 ```
 import "./main.css";
 ```
-
+### 06_imgloader(使用图片)
+注意最后生成的是一个路径，例如3bf9b71c6abcf402e5327795bd7c74e2.jpg
+安装loader
+```
+cnpm i file-loader -D
+```
+配置loader
+```
+{
+    test: /\.jpg$/,
+    use: ["file-loader"]
+}
+```
+也可以使用下面方式使用图片，利用的也是file-loader
+```
+import qsmy from "./common/img/qsmy.jpg";
+<img src={qsmy} alt=""/>
+```
