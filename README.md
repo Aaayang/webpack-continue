@@ -128,3 +128,59 @@ const ayan = require("./common/img/ayan.png");
     use: ["file-loader"]
 }
 ```
+使用第三方字体
+```
+cnpm install font-awesome -S
+import "font-awesome/css/font-awesome.css";
+<div className="fa fa-rocket">hello world</div>
+```
+### cssmodule(CSS模块化)
+开启CSS模块化后，每个单独的CSS文件都是一个模块，互不影响，同时CSS的引入和使用方式都变了
+```
+// 开启
+{
+    test: /\.css$/,
+    use: ["style-loader", {
+        loader: "css-loader",
+        options: {
+            module: true,// 开启模块化
+        }
+    }]
+}
+```
+```
+// 模块化的引入方式，普通的引入方式直接import...
+import style from "./common/style/main.css";
+```
+```
+// 使用
+<div className={style.ot}>hello world</div>
+```
+继续...
+
+指定文件夹中的内容不要开启模块化，例如import "font-awesome/css/font-awesome.css"，下面配置的意思是node_modules和src/common两个目录不适用CSS模块化，其他目录都使用
+```
+{
+    test: /\.css$/,
+    use: ["style-loader", {
+        loader: "css-loader",
+        options: {
+            module: true,// 开启模块化
+            localIdentName: "[name]-[local]_[hash:base64:6]"// 模块化后CSS类名配置
+            // localIdentName: "[path]-[name]-[local]-[hash:base64:6]"
+        }
+    }],
+    exclude: [
+        path.resolve(__dirname, "node_modules"),
+        path.resolve(__dirname, "src/common")
+    ]
+},
+{
+    test: /\.css$/,
+    use: ["style-loader", "css-loader"],
+    include: [
+        path.resolve(__dirname, "node_modules"),
+        path.resolve(__dirname, "src/common")
+    ]
+}
+```
