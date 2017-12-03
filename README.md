@@ -310,3 +310,8 @@ webpack.config.dev.js中的options可以去掉，新建.babelrc代替如下：
     "plugins": ["transform-object-rest-spread"]
 }
 ```
+### 14_disthandle(输出路径处理)
+打包后的文件可以直接运行，npm start下的文件不能运行了
+```
+clean-webpack-plugin
+```
