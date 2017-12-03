@@ -120,3 +120,11 @@ const ayan = require("./common/img/ayan.png");
     ]
 }
 ```
+### 08_fontloader(使用字体)
+使用的也是file-loader
+```
+{
+    test: /\.(ttf|eot|svg|woff|woff2|otf)$/,
+    use: ["file-loader"]
+}
+```
