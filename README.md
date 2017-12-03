@@ -260,3 +260,27 @@ package.json中可以指定编译生成的目录
 ```
 "babel": "babel src/app.js -o out/main.js"
 ```
+### 12_babelloader
+```
+// 处理ES6或更高版本的标准的语法的预设（预设包括好多插件）
+babel-preset-env
+```
+```
+// 处理展开符（...非标准）的专门插件
+babel-plugin-transform-object-rest-spread
+```
+对应webpack.config.dev.js中的配置
+```
+{
+    test: /\.js$/,
+    use: [
+        {
+            loader: "babel-loader",
+            options: {
+                presets: ["react", "env"],// 预设
+                plugins: ["transform-object-rest-spread"]
+            }
+        }
+    ]
+}
+```
