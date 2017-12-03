@@ -200,3 +200,63 @@ less
     use: ['style-loader','css-loader','sass-loader']
 }
 ```
+### 11_babel
+如果不想全局安装babel，又想使用babel命令，可以配置package.json如下：
+```
+"babel": "./node_modules/.bin/babel src/app.js"
+```
+或
+```
+"babel": "babel src/app.js"
+```
+<br/>
+<br/>
+例如专门处理箭头函数的插件
+```
+babel-plugin-transform-es2015-arrow-functions
+```
+修改配置如下：
+```
+"babel": "babel src/app.js --plugins transform-es2015-arrow-functions"
+```
+<br/>
+<br/>
+```
+babel-plugin-transform-es2015-classes
+```
+```
+"babel": "babel src/app.js --plugins=transform-es2015-arrow-functions,transform-es2015-classes"
+```
+<br/>
+<br/>
+也可以配置.babelrc
+```
+{
+    "plugins": [
+        "transform-es2015-arrow-functions",
+        "transform-es2015-classes"
+    ]
+}
+```
+这时候package.json
+```
+"babel": "babel src/app.js"
+```
+<br/>
+<br/>
+预设：相关的插件打包在一起
+```
+babel-preset-es2015
+```
+这时候.babelrc配置如下：
+```
+{
+    "presets": [
+        "es2015"
+    ]
+}
+```
+package.json中可以指定编译生成的目录
+```
+"babel": "babel src/app.js -o out/main.js"
+```
