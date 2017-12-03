@@ -315,3 +315,5 @@ webpack.config.dev.js中的options可以去掉，新建.babelrc代替如下：
 ```
 clean-webpack-plugin
 ```
+### 15_disthandle(输出路径处理)
+服务器下可用
