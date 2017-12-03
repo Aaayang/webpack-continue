@@ -284,3 +284,29 @@ babel-plugin-transform-object-rest-spread
     ]
 }
 ```
+### 13_babelloader(优化)
+影响编译、打包速度和大小，排除node_modules，因为node_modules中的内容已经自己做好了处理
+```
+{
+    test: /\.js$/,
+    use: [
+        {
+            loader: "babel-loader",
+            options: {
+                presets: ["react", "env"],// 预设
+                plugins: ["transform-object-rest-spread"]
+            }
+        }
+    ],
+    exclude: [
+        path.resolve(__dirname, "node_modules")
+    ]
+}
+```
+webpack.config.dev.js中的options可以去掉，新建.babelrc代替如下：
+```
+{
+    "presets": ["react","env"],
+    "plugins": ["transform-object-rest-spread"]
+}
+```
