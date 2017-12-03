@@ -1,0 +1,10 @@
+html,body{
+    height: 100%;
+}
+/* body{
+    background: url("../img/qsmy.jpg") no-repeat;
+    background-size: contain;
+} */
+.col-white{
+    color: #fff;
+}

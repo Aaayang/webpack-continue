@@ -96,8 +96,27 @@ cnpm i file-loader -D
     use: ["file-loader"]
 }
 ```
-也可以使用下面方式使用图片，利用的也是file-loader
+除了background直接引入图片外，也可以使用下面方式使用图片，利用的也是file-loader
 ```
 import qsmy from "./common/img/qsmy.jpg";
 <img src={qsmy} alt=""/>
+```
+```
+const ayan = require("./common/img/ayan.png");
+<img src={ayan} width="300" alt=""/>
+```
+### 07_urlloader(优化图片加载)
+默认会把所有图片以base64使用
+```
+{
+    test: /\.(jpg|png|gif|jpeg)$/,
+    use: [
+        {
+            loader: "url-loader",
+            options: {
+                limit: 10000// 只有小于10KB的才会直接是Base64
+            }
+        }
+    ]
+}
 ```
