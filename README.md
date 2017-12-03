@@ -73,5 +73,14 @@ devServer: {// webpack-dev-server配置
     port: 9000
 }
 ```
-
+### 05_cssloader(使用CSS)
+CSS依赖，注意配置时两个loader是有先后顺序的
+```
+style-loader
+css-loader
+```
+使用方法
+```
+import "./main.css";
+```
 
