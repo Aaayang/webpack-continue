@@ -25,12 +25,13 @@ plugins: [
 ]
 ```
 ### 03_loader(使用React)
+React依赖
 ```
-// React依赖
 babel-loader
 babel-core
 babel-preset-react
 ```
+配置loader
 ```
 module: {
     rules: [
@@ -48,3 +49,29 @@ module: {
     ]
 }
 ```
+### 04_devserver(开发服务器)
+会把项目打包放在内存中
+```
+安装webpack-dev-server
+```
+配置package.json
+```
+"start": "webpack-dev-server --config webpack.config.dev.js"
+```
+修改打包输出文件名为index.html，是服务器默认的访问文件，不然会找不到
+```
+plugins: [
+    new HtmlWebpackPlugin({
+        filename: "index.html",// 注意这里输出文件名该为了index.html，是服务器默认访问的文件
+    })
+]
+```
+配置服务器
+```
+devServer: {// webpack-dev-server配置
+    open: true,// 自动打开浏览器
+    port: 9000
+}
+```
+
+
