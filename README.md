@@ -24,3 +24,27 @@ plugins: [
     })
 ]
 ```
+### 03_loader(使用React)
+```
+// React依赖
+babel-loader
+babel-core
+babel-preset-react
+```
+```
+module: {
+    rules: [
+        {
+            test: /\.js/,
+            use: [
+                {
+                    loader: "babel-loader",// 处理模块的某部分内容
+                    options: {
+                        presets: ["react"]// 预设
+                    }
+                }
+            ]
+        }
+    ]
+}
+```
