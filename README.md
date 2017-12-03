@@ -134,7 +134,7 @@ cnpm install font-awesome -S
 import "font-awesome/css/font-awesome.css";
 <div className="fa fa-rocket">hello world</div>
 ```
-### cssmodule(CSS模块化)
+### 09_cssmodule(CSS模块化)
 开启CSS模块化后，每个单独的CSS文件都是一个模块，互不影响，同时CSS的引入和使用方式都变了
 ```
 // 开启
@@ -182,5 +182,21 @@ import style from "./common/style/main.css";
         path.resolve(__dirname, "node_modules"),
         path.resolve(__dirname, "src/common")
     ]
+}
+```
+### 10_sass&less
+安装sass/less依赖
+```
+sass-loader
+node-sass
+
+less-loader
+less
+```
+配置
+```
+{
+    test: /\.scss$/,
+    use: ['style-loader','css-loader','sass-loader']
 }
 ```
